@@ -5,7 +5,7 @@ networks:
     driver: bridge
 services:  
   codi-ruta2-r0:  
-    image: fintecheando/echo-fineract
+    image: fintecheando/echo
     restart: always
     ports:
       - 8081:8081
