@@ -1,0 +1,18 @@
+version: "2.2"
+
+networks:
+  fineract:
+    driver: bridge
+services:  
+  codi-ruta2-r0:  
+    image: fintecheando/echo-fineract
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - fineract
+    healthcheck:
+      test: ["CMD", "curl", "-k -O", "https://127.0.0.1:8081"]
+      interval: 30s
+      timeout: 10s
+      retries: 5  
